@@ -1,0 +1,9 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.center {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+}
