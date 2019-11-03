@@ -12,12 +12,13 @@ What things you need to install the software and how to install them
 
 ```
 node
-npm
+npm or yarn
+git
 ```
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+To get this running in your development environment:
 
 1. Clone the project on your local machine.
 
@@ -30,8 +31,25 @@ git clone https://github.com/matr1xp/qantas-demo.git
 ```
 npm install
 ```
+or
+```
+yarn install
+```
+3. Run in development
 
-End with an example of getting some data out of the system or using it for a little demo
+```
+npm start
+```
+4. To create an optimised production build
+
+```
+npm run-script build
+```
+or
+```
+yarn build
+```
+
 
 ## Running the tests
 
