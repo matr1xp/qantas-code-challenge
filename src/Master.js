@@ -12,7 +12,6 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 
 const styles = theme => ({
   list: {
-    display: "flex",
     justifyContent: "center",
     alignItems: "center"
   },
@@ -22,7 +21,6 @@ const styles = theme => ({
     padding: 10
   },
   center: {
-    display: "flex",
     justifyContent: "center",
     alignItems: "center"
   }
@@ -103,55 +101,53 @@ class Master extends Component {
 
     return (
       <div className={classes.list} id="scrollable">
-        <div>
-          <List component="nav">
-            {this.state.data.map((item, idx) => (
-              <Link
-                to={{
-                  pathname: "/detail",
-                  hash: `#${item.airportCode}`,
-                  data: item,
-                  idx: this.props.data[0].findIndex(
-                    x => x.airportCode === item.airportCode
-                  )
-                }}
-                key={item.airportCode}
-                id={item.airportCode}
-                style={{ textDecoration: "none" }}
-                onClick={event =>
-                  this.handleListItemClick(event, item.airportCode, idx)
-                }
+        <List component="nav">
+          {this.state.data.map((item, idx) => (
+            <Link
+              to={{
+                pathname: "/detail",
+                hash: `#${item.airportCode}`,
+                data: item,
+                idx: this.props.data[0].findIndex(
+                  x => x.airportCode === item.airportCode
+                )
+              }}
+              key={item.airportCode}
+              id={item.airportCode}
+              style={{ textDecoration: "none" }}
+              onClick={event =>
+                this.handleListItemClick(event, item.airportCode, idx)
+              }
+            >
+              <ListItem
+                button
+                alignItems="flex-start"
+                selected={this.state.selected === `#${item.airportCode}`}
               >
-                <ListItem
-                  button
-                  alignItems="flex-start"
-                  selected={this.state.selected === `#${item.airportCode}`}
-                >
-                  <div className={classes.hidden}>
-                    {this.props.data[0].findIndex(
-                      x => x.airportCode === item.airportCode
-                    ) + 1}
-                  </div>
-                  <ListItemIcon>
-                    <ReactCountryFlag code={item.country.countryCode} svg />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={item.airportName}
-                    secondary={item.country.countryName}
-                  />
-                  <ListItemSecondaryAction>
-                    <ArrowForwardIosIcon color="action" />
-                  </ListItemSecondaryAction>
-                </ListItem>
-              </Link>
-            ))}
-          </List>
-          {fetching ? (
-            <div className={classes.center}>
-              <CircularProgress disableShrink />
-            </div>
-          ) : null}
-        </div>
+                <div className={classes.hidden}>
+                  {this.props.data[0].findIndex(
+                    x => x.airportCode === item.airportCode
+                  ) + 1}
+                </div>
+                <ListItemIcon>
+                  <ReactCountryFlag code={item.country.countryCode} svg />
+                </ListItemIcon>
+                <ListItemText
+                  primary={item.airportName}
+                  secondary={item.country.countryName}
+                />
+                <ListItemSecondaryAction>
+                  <ArrowForwardIosIcon color="action" />
+                </ListItemSecondaryAction>
+              </ListItem>
+            </Link>
+          ))}
+        </List>
+        {fetching ? (
+          <div className={classes.center}>
+            <CircularProgress disableShrink />
+          </div>
+        ) : null}
       </div>
     );
   }

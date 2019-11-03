@@ -9,18 +9,17 @@ import { withStyles } from "@material-ui/core/styles";
 
 const styles = theme => ({
   body: {
-    top: theme.spacing(20)
+    top: theme.spacing(20),
+    marginLeft: 30,
+    marginTop: 30,
+    minHeight: 400
   },
   button: {
     position: "fixed",
-    bottom: theme.spacing(2),
-    minWidth: 200
-  },
-  center: {
-    display: "flex",
+    textAlign: "center",
     justifyContent: "center",
-    alignItems: "center",
-    height: "90vh"
+    bottom: theme.spacing(1),
+    width: "98%"
   }
 });
 
@@ -31,7 +30,7 @@ class Detail extends Component {
     const { data, idx } = this.props.location;
     if (data) {
       return (
-        <Box className={classes.center}>
+        <Box>
           <div className={classes.body}>
             <Typography variant="overline" color="textSecondary">
               <ReactCountryFlag code={data.country.countryCode} svg />{" "}
