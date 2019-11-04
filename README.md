@@ -51,27 +51,22 @@ yarn build
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+The tests use the `jest` test runner. 
 
-### Break down into end to end tests
-
-Explain what these tests test and why
+Follow instructions on the [Jest](https://jestjs.io/docs/en/getting-started) website.
 
 ```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
+jest
 ```
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Using production build deploy to any Node.js server.
+
+If you wish to setup in the cloud, signup and deploy to [Zeit](https://zeit.co/).
+
+There is one provided for this project located at https://qantas.now.sh/
+
 
 ## Built With
 
@@ -80,10 +75,6 @@ Add additional notes about how to deploy this on a live system
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://gist.github.com/matr1xp/5464de2b98c0444cc4bf594fe9c3761f) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
 ## Authors
 
@@ -94,9 +85,3 @@ See also the list of [contributors](https://github.com/your/project/contributors
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc

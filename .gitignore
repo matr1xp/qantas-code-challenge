@@ -1,0 +1,4 @@
+node_modules
+__tests__/__snapshots__
+build/
+*error.log

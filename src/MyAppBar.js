@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import AppBar from "@material-ui/core/AppBar";
-import { fade, withStyles } from "@material-ui/core/styles";
+import { fade, makeStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
@@ -8,7 +8,7 @@ import InputBase from "@material-ui/core/InputBase";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 
-const styles = theme => ({
+const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
   },
@@ -58,15 +58,11 @@ const styles = theme => ({
       width: 200
     }
   }
-});
+}));
 
-class MyAppBar extends Component {
-  handleSearch = e => {
-    console.log("Search", e.target.value);
-  };
-  render() {
-    const { classes } = this.props;
-    return (
+export default function MyAppBar(props) {
+  const classes = useStyles();
+  return (
       <div className={classes.root}>
         <AppBar position="fixed">
           <Toolbar>
@@ -79,7 +75,7 @@ class MyAppBar extends Component {
               <MenuIcon />
             </IconButton>
             <Typography className={classes.title} variant="h6" noWrap>
-              Qantas Airports
+              Qantas Airport Finder
             </Typography>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
@@ -92,14 +88,11 @@ class MyAppBar extends Component {
                   input: classes.inputInput
                 }}
                 inputProps={{ "aria-label": "search" }}
-                onChange={this.handleSearch}
               />
             </div>
           </Toolbar>
         </AppBar>
       </div>
     );
-  }
+  
 }
-
-export default withStyles(styles)(MyAppBar);
