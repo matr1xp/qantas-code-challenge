@@ -1,8 +1,8 @@
 {
-  "name": "new",
+  "name": "qantas-demo",
   "version": "1.0.0",
-  "description": "",
-  "keywords": [],
+  "description": "A webapp showing Airport information built for  Qantas code challenge (Web)",
+  "keywords": [qantas, airports, react.js],
   "main": "src/index.js",
   "dependencies": {
     "@material-ui/core": "4.5.2",
